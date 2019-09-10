@@ -17,8 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 
+# Login, Listview and Changeview Page
+admin.site.site_header = "Django Shop Admin"
+# Listview Page
+admin.site.site_title = "Django Shop Admin"
+# HTML title tag
+admin.site.index_title = "Welcome to the Django Shop Admin"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('shop.urls')),
 ]
 
 if settings.DEBUG:

@@ -17,6 +17,7 @@ The app provides a possibility:
 
 
 ## Demo
+- [Django Store on Heroku](https://django-store-hw.herokuapp.com/)
 
 
 ## Screenshots
