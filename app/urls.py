@@ -26,6 +26,7 @@ admin.site.index_title = "Welcome to the Django Shop Admin"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('cart', include('cart.urls')),
     path('', include('shop.urls')),
 ]
 
