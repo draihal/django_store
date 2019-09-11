@@ -2,19 +2,24 @@
 {% load static %}
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="{% static 'css/base.css' %}" rel="stylesheet">
-    <title>{% block title %}Coffee shop{% endblock title %}</title>
-    {% block head_extra %} {% endblock head_extra %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Simple shopping app.">
+  <meta name="author" content="Alexandra Draihal">
+  <link rel="icon" href="{% static 'images/coffee-cup.png' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link href="{% static 'css/base.css' %}" rel="stylesheet">
+  <title>{% block title %}Coffee shop{% endblock title %}</title>
+  {% block head_extra %} {% endblock head_extra %}
 </head>
-<body>
-    {% include 'shop/navbar.html' %}
-    <div class="container-fluid">
-        {% block content %}
-        {% endblock content %}
-    </div>
-    {% include 'shop/js.html' %}
+  <body class="bg-light">
+      {% include 'shop/navbar.html' %}
+<main role="main">
+  <div class="container">
+    {% block content %}
+    {% endblock content %}
+  </div>
+</main>
+{% include 'shop/js.html' %}
 </body>
 </html>
