@@ -5,20 +5,15 @@
 This is a Store powered by django with simple cart. 
 
 ## Dependencies
-
+Python, django, pillow and Bootstrap.
 
 ## Description
 The app provides a possibility:
 
-- Add to cart
-- Clear cart
+- Add required quantity to cart
 - Delete product from cart
-- Change quantity (+ or -)
-
-
-## Demo
-- [Django Store on Heroku](https://django-store-hw.herokuapp.com/)
-
+- Create simple order without payment
 
 ## Screenshots
-
+![Django_Store_screenshot](static/images/main.jpg) 
+![Django_Store cart_screenshot](static/images/cart.jpg) 
