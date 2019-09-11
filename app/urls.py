@@ -14,14 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
 from django.conf import settings
+from django.urls import path, include
 
-# Login, Listview and Changeview Page
 admin.site.site_header = "Django Shop Admin"
-# Listview Page
 admin.site.site_title = "Django Shop Admin"
-# HTML title tag
 admin.site.index_title = "Welcome to the Django Shop Admin"
 
 urlpatterns = [

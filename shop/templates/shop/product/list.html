@@ -1,8 +1,6 @@
 {% extends 'shop/base.html' %}
 {% load static %}
-{% block title %}
-{% if category %}{{ category.name }} {% else %} Products {% endif %}
-{% endblock %}
+{% block title %}{% if category %}{{ category.name }} {% else %} Products {% endif %}{% endblock %}
 
 {% block content %}
 <nav class="nav nav-pills flex-column flex-sm-row">
@@ -10,9 +8,7 @@
     {% for c in categories %}
     <a class="flex-sm-fill text-sm-center nav-link {% if category.slug == c.slug %}active{% endif %}" href="{{ c.get_absolute_url }}">{{ c.name }}</a>
     {% endfor %}
-
 </nav>
-
 <div class="card-columns" style="margin-top: 5%">
     {% for product in products %}
     <div class="card mb-3" style="max-width: 540px;">

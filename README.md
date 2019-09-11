@@ -1,5 +1,5 @@
 # Django Store
-> This is a simple online store on Django.
+> This is a simple online store on Django built for learning.
 
 ## About
 This is a Store powered by django with simple cart. 
