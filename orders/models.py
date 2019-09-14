@@ -1,21 +1,22 @@
 from django.db import models
 
 from shop.models import Product
+from shop.mixins import TimestampMixin
 
 
-class Order(models.Model):
+class Order(TimestampMixin):
     first_name = models.CharField(max_length=60)
     last_name = models.CharField(max_length=60)
     email = models.EmailField()
     address = models.CharField(max_length=150)
     postal_code = models.CharField(max_length=30)
     city = models.CharField(max_length=100)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    # created = models.DateTimeField(auto_now_add=True)
+    # updated = models.DateTimeField(auto_now=True)
     paid = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ('-created', )
+        ordering = ('-created_at', )
 
     def __str__(self):
         return 'Order {}'.format(self.id)

@@ -1,16 +1,18 @@
 from django.db import models
 from django.urls import reverse
 
+from .mixins import TimestampMixin
 
-class Category(models.Model):
+
+class Category(TimestampMixin):
     name = models.CharField(
         max_length=150, db_index=True,
         help_text='Name for category',)
     slug = models.SlugField(
         max_length=150, db_index=True,
         unique=True, help_text='Slug for url',)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    # created_at = models.DateTimeField(auto_now_add=True)
+    # updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ('name', )
@@ -24,7 +26,7 @@ class Category(models.Model):
         return reverse('shop:product_list_by_category', args=[self.slug])
 
 
-class Product(models.Model):
+class Product(TimestampMixin):
     category = models.ForeignKey(
         Category, related_name='products',
         on_delete=models.CASCADE,)
@@ -38,8 +40,8 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     available = models.BooleanField(default=True)
     stock = models.PositiveIntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    # created_at = models.DateTimeField(auto_now_add=True)
+    # updated_at = models.DateTimeField(auto_now=True)
 
     def upload_product_image_dir(self, filename):
         url = f'products_images/{self.category}/{filename.lower()}'
